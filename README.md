@@ -1,14 +1,15 @@
+# Configuração de Ambiente Python Conversor de Dívida Ativa
 
-# Configuração de Ambiente Python Conversor dívida ativa
-
-Este guia fornece instruções passo a passo para configurar um ambiente Python isolado, criado para sanitizar dados do nosso sistema de dívida ativa, usando em sistemas operacionais Windows ou macOS.
+Este guia fornece instruções detalhadas para configurar um ambiente Python isolado, destinado à sanitização de dados do nosso sistema de dívida ativa. As instruções são válidas para sistemas operacionais Windows e macOS.
 
 ## Pré-requisitos
 
-Antes de iniciar, certifique-se de que o Python 3 está instalado em seu sistema. Você pode verificar isso executando:
+1. **Instalação do Python**:
+
+Certifique-se de que o Python 3 está instalado em seu sistema. Verifique isso executando:
 
 ```bash
-python  --version
+python --version
 ```
 
 ou
@@ -17,37 +18,91 @@ ou
 python3  --version
 ```
 
-Se o Python não estiver instalado, você pode baixá-lo do [site oficial do Python](https://www.python.org/downloads/).
+Se o Python não estiver instalado, baixe-o do [site oficial do Python](https://www.python.org/downloads/).
 
-## Faça o download do projeto via google drive
+2. **Instalação do Git**:
 
-1. <https://drive.google.com/drive/folders/1s1ywYf0thoJoRLEvpoTZV7Pe-9xbAZOB?usp=drive_link>
+Para Windows, baixe e instale o Git de [Git for Windows](https://gitforwindows.org/). Durante a instalação, selecione "Use Git from the Windows Command Prompt" para garantir que o Git pode ser usado facilmente no CMD.
 
-## Capturar o arquivo xlsx ou csv não sanitizado
+## Configuração Inicial
 
-1.Pedir o arquivo não sanitizado ao sinceti e/ou a pessoa responsável pelo mesmo.
+### Clonagem do Projeto
 
-2.Guarde o arquivo no seu computador local, no seu ambiente para a sanitização.
+1. Abra o Prompt de Comando (Windows) ou Terminal (macOS).
 
-3.Utilize a pasta Input e coloque o arquivo dentro da pasta do projeto.
+2. Navegue até o diretório onde deseja armazenar o projeto, usando:
 
-4.Renomeie o arquivo para RegistroDeDados.xlsx ou RegistroDeDados.csv, dependendo do tipo de arquivo
+```bash
+cd caminho/desejado
+```
 
-## Configuração no Windows
+3. Clone o projeto do GitHub:
+
+```bash
+git clone https://github.com/AndreyNovaes/divida_ativa_conversor.git && cd divida_ativa_conversor
+```
+
+Isso criará uma pasta `divida_ativa_conversor` no diretório atual e entrará dentro dele,
+
+### Instalação e Uso do Visual Studio Code
+
+1. **Instalação do Visual Studio Code**:
+   - Baixe o Visual Studio Code do [site oficial do VS Code](https://code.visualstudio.com/).
+   - Siga as instruções de instalação específicas para o seu sistema operacional (Windows, macOS, ou Linux).
+
+2. **Abrindo o projeto no Visual Studio Code**:
+   - Abra o Prompt de Comando (Windows) ou Terminal (macOS).
+   - Navegue até o diretório do projeto onde você clonou o repositório. Por exemplo:
+
+     ```bash
+     cd caminho/para/divida_ativa_conversor
+     ```
+
+   - Execute o comando abaixo para abrir o diretório do projeto no VS Code:
+
+     ```bash
+     code .
+     ```
+
+   Este comando abrirá todos os arquivos do projeto dentro do Visual Studio Code, permitindo fácil acesso e edição.
+
+### Preparação dos Dados
+
+1. Solicite o arquivo não sanitizado ao responsável.
+
+2. Salve o arquivo na sua máquina.
+
+3. Mova o arquivo para a pasta `Input` dentro do diretório do projeto clonado,
+4. Recomenda-se mover o arquivo de forma livre para dentro da pasta input, de forma simples, clicar, segurar e arrasta-lo para a pasta input.
+5. ou Tente usar o terminal com os comandos abaixo:
+
+```bash
+move caminho\\do\\arquivo\\RegistroDeDados.xlsx caminho\\do\\seu\\projeto\\divida_ativa_conversor\\Input\\
+```
+
+ou para `.csv`:
+
+```bash
+move caminho\\do\\arquivo\\RegistroDeDados.csv caminho\\do\\seu\\projeto\\divida_ativa_conversor\\Input\\
+```
+
+## Configuração de Ambiente Python
+
+### Windows
 
 1. **Criar o ambiente virtual**:
 
-Abra o Prompt de Comando e navegue até o diretório do seu projeto usando `cd caminho/do/seu/projeto`, neste caso seria no path onde o arquivo collect_info.py se encontra. Então, execute:
+Navegue até o diretório do projeto e crie o ambiente virtual:
 
 ```bash
+cd caminho\\do\\seu\\projeto\\divida_ativa_conversor
 python -m venv venv
 ```
 
 2. **Ativar o ambiente virtual**:
-Para ativar o ambiente virtual, execute:
 
 ```bash
-.\venv\Scripts\activate
+.\\venv\\Scripts\\activate
 ```
 
 3. **Instalar dependências**:
@@ -60,44 +115,8 @@ pip install -r requirements.txt
 
 4. **Executar o script**:
 
-Execute o script Python com:
-
 ```bash
 python collect_info.py
-```
-
-## Configuração no macOS
-
-1. **Criar o ambiente virtual**:
-
-Abra o Terminal e navegue até o diretório do seu projeto com `cd caminho/do/seu/projeto`. Execute:
-
-```bash
-python3 -m venv venv
-```
-
-2. **Ativar o ambiente virtual**:
-
-Para ativar o ambiente virtual no macOS, use:
-
-```bash
-source venv/bin/activate
-```
-
-3. **Instalar dependências**:
-
-Assegure-se de que o arquivo `requirements.txt` está no diretório do projeto. Instale as dependências com:
-
-```bash
-pip install -r requirements.txt
-```
-
-4. **Executar o script**:
-
-Execute o script Python com:
-
-```bash
-python3 collect_info.py
 ```
 
 ## Desativar o ambiente virtual
