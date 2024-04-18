@@ -46,6 +46,8 @@ Isso criará uma pasta `divida_ativa_conversor` no diretório atual e entrará d
 
 ### Instalação e Uso do Visual Studio Code
 
+## Teste
+
 1. **Instalação do Visual Studio Code**:
    - Baixe o Visual Studio Code do [site oficial do VS Code](https://code.visualstudio.com/).
    - Siga as instruções de instalação específicas para o seu sistema operacional (Windows, macOS, ou Linux).
